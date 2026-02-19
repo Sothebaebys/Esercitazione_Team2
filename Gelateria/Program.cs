@@ -1,6 +1,6 @@
 ﻿using System;
 
-class Gelateria
+class GelateriaGelo
 {
 // void NomeFunzioneMetodo()
 // {
