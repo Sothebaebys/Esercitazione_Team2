@@ -17,6 +17,6 @@ class Gelateria
    
    static void Main(string [] args)
    {
-   StampaMenu(["Pippo","pluto","paperino"],[12.5,5.1,3.3],[1,2,3]);
+      //StampaMenu(["Pippo","pluto","paperino"],[12.5,5.1,3.3],[1,2,3]);
    }
 }
