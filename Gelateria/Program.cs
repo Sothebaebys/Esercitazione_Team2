@@ -5,15 +5,15 @@ class GelateriaGelo
 {
     // Costante per la soglia sconto
     const double SOGLIA_SCONTO = 10.0;
-    string[] gusti = ["cioccolato", "vaniglia", "fragola", "pistacchio", "limone"];
-    double[] prezzi = [1.50, 1.20, 1.30, 1.60, 1.10];
+    public static string[] gusti = ["cioccolato", "vaniglia", "fragola", "pistacchio", "limone"];
+    public static double[] prezzi = [1.50, 1.20, 1.30, 1.60, 1.10];
     //int lunghezza= gusti.Length;
     //int[] indice = new int[gusti.Length];
 
     //Funzione per mandare in stampa il menù
     //In realtà l'argomento si può rimuovere senza problemi e si itera direttamente 
     //tra la lunghezza dell'array gusti/prezzi
-    public static void StampaMenu(string[] gusti, double[] prezzi /*, int[] indice*/)
+    public static void StampaMenu(/*string[] gusti, double[] prezzi , int[] indice*/)
     {
         Console.WriteLine("\n---------------\nMenù dei gelati\n---------------\n");
         // Manda in stampa il menù completo iterando tra gusti e prezzi
@@ -27,6 +27,7 @@ class GelateriaGelo
         }
     }
     
+
     static void Main(string[] args)
     {
         bool continua = true;
