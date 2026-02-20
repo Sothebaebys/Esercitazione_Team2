@@ -29,7 +29,7 @@ class GelateriaGelo
     
 
     static void Main(string[] args)
-    {
+    {/*
         bool continua = true;
         string selezione = "";
         //StampaMenu(["Pippo","pluto","paperino"],[12.5,5.1,3.3],[1,2,3]);
@@ -55,7 +55,7 @@ class GelateriaGelo
             }
 
         }
-
+    */
     }
 
 
