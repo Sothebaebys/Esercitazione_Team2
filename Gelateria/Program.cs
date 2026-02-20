@@ -1,10 +1,33 @@
 ﻿using System;
-class Program
+
+//using System.Security.Cryptography.X509Certificates;
+
+class GelateriaGelo
 {
-    //Array dei gusti: Crea un array di stringhe che contenga almeno 5 gusti di gelato 
-    static string[] gusti = { "Cioccolato", "Vaniglia", "Fragola", "Pistacchio", "Limone" };
-    //Array dei prezzi: Crea un array parallelo di double con il prezzo per pallina di ciascun gusto.
-    static double[] costi = { 1.50, 1.20, 1.30, 1.60, 1.10 };
+    // Costante per la soglia sconto
+    const double SOGLIA_SCONTO = 10.0;
+    public static string[] gusti = ["cioccolato", "vaniglia", "fragola", "pistacchio", "limone"];
+    public static double[] prezzi = [1.50, 1.20, 1.30, 1.60, 1.10];
+    //int lunghezza= gusti.Length;
+    //int[] indice = new int[gusti.Length];
+
+    //Funzione per mandare in stampa il menù
+    //In realtà l'argomento si può rimuovere senza problemi e si itera direttamente 
+    //tra la lunghezza dell'array gusti/prezzi
+    public static void StampaMenu(/*string[] gusti, double[] prezzi , int[] indice*/)
+    {
+        Console.WriteLine("\n---------------\nMenù dei gelati\n---------------\n");
+        // Manda in stampa il menù completo iterando tra gusti e prezzi
+        Console.WriteLine("Gusti:");
+
+        // Eventualmente si può sostituire indice con gusti/prezzi
+        for (int i = 0; i < gusti.Length /*indice.Length */; i++)
+        {
+            Console.WriteLine($"    -{i} {gusti[i]}\n                 Prezzo per pallina:  €{prezzi[i]}");
+            Console.WriteLine("---------------------------------------------------------------");
+        }
+    }
+
 
     static void Main(string[] args)
     {
@@ -57,32 +80,13 @@ class Program
                 continua = false;
             }
         }
+    
     }
 
-    //Funzione di stampa menu: Scrivi una funzione StampaMenu() che mostri tutti i gusti con i relativi prezzi.
-	
-	/*    public static void StampaMenu(string[] gusti, double[] prezzi, int[] indice)
-    {
-        Console.WriteLine("Gusti:");
 
-        for (int i = 0; i < indice.Length; i++)
-        {
-            Console.WriteLine($"    -{gusti[i]}\n                 Prezzo:  €{prezzi[i]}");
-            Console.WriteLine("--------------------------------------------------");
-        }
-    }
 
-*/
-	
-    public static void StampaMenu()
-    {
-        Console.WriteLine("Benvenuto! Ecco il menù: ");
-        Console.WriteLine($"1-{gusti[0]}, {costi[0]}");
-        Console.WriteLine($"2-{gusti[1]}, {costi[1]}");
-        Console.WriteLine($"3-{gusti[2]}, {costi[2]}");
-        Console.WriteLine($"4-{gusti[3]}, {costi[3]}");
-        Console.WriteLine($"5-{gusti[4]}, {costi[4]}");
-    }
+
+
 
     /*Funzione di calcolo prezzo: Scrivi una funzione CalcolaTotale(int gusto, int quantita) 
             che ritorni il prezzo totale per quel gusto e quella quantità.*/
