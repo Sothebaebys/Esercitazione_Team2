@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gelateria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ce9093a6cfc43eda637afb159acacdaa77f3180")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac30facab266f3df9dd9f3a011fc1926df744c70")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gelateria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gelateria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
