@@ -25,11 +25,11 @@ class Gelateria
 
     static double CalcoloTotale(double[] prezzo, int quan, int sel, bool subtot)
     {
-        double totale = 0;
-        int giro = 0;
+        if(subtot)
+        {
             totale += prezzo[sel - 1] * quan;
             Console.WriteLine($"Gusto: {prezzo[sel - 1]} --- Quantita: {quan}"); //--- DEBUG
-            giro++;
+        }
         if(totale > 10.0d && !subtot)
         {
             totale *= 0.9;
@@ -62,7 +62,7 @@ class Gelateria
         int quantita = 2;
         Console.WriteLine($"Stampa calcolo: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
         selezione = 1;
-        quantita = 3;
+        quantita = 9;
         Console.WriteLine($"Il subtotale è: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
         calcolosubtotale = false;
         Console.WriteLine($"Il totale è: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
