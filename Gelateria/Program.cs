@@ -53,7 +53,7 @@ class Gelateria
 
 
 
-    static void Main(string [] args)
+    /* static void Main(string [] args)
     {
         string[] gusti = new string[]{ "cioccolato", "vaniglia", "fragola", "pistacchio", "limone" };
         double[] prezzi = new double[]{ 1.50, 1.20, 1.30, 1.60, 1.10 };
@@ -66,5 +66,5 @@ class Gelateria
         Console.WriteLine($"Il subtotale è: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
         calcolosubtotale = false;
         Console.WriteLine($"Il totale è: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
-    } 
+    }  */
 }
