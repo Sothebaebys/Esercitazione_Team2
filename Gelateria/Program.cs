@@ -8,6 +8,7 @@ class GelateriaGelo
     const double SOGLIA_SCONTO = 10.0;
     public static string[] gusti = ["cioccolato", "vaniglia", "fragola", "pistacchio", "limone"];
     public static double[] prezzi = [1.50, 1.20, 1.30, 1.60, 1.10];
+    static double totale = 0;
     //int lunghezza= gusti.Length;
     //int[] indice = new int[gusti.Length];
 
@@ -27,8 +28,6 @@ class GelateriaGelo
             Console.WriteLine("---------------------------------------------------------------");
         }
     }
-
-    static double totale;
 
     static double CalcoloTotale(double p, int quan, bool subtot)
     {
