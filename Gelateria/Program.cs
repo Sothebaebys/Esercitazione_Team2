@@ -2,7 +2,7 @@
 
 class Gelateria
 {
-    static double CalcoloTotale(double[] prezzo, string quan, string sel, bool subtot)
+    /* static double CalcoloTotale(double[] prezzo, string quan, string sel, bool subtot)
     {
         double totale = 0;
         string[] selezioni = sel.Split(" ");
@@ -11,7 +11,7 @@ class Gelateria
         foreach(string s in selezioni)
         {
             totale += prezzo[(int.Parse(s)) - 1] * double.Parse(quantita[giro]);
-            //Console.WriteLine($"Gusto: {prezzo[int.Parse(s) - 1]} --- Quantita: {quantita[giro]}"); //--- DEBUG
+            Console.WriteLine($"Gusto: {prezzo[int.Parse(s) - 1]} --- Quantita: {quantita[giro]}"); //--- DEBUG
             giro++;
         }
         if(totale > 10.0d && !subtot)
@@ -19,7 +19,25 @@ class Gelateria
             totale *= 0.9;
         }
         return totale;
+    } */
+
+    static double totale;
+
+    static double CalcoloTotale(double[] prezzo, int quan, int sel, bool subtot)
+    {
+        double totale = 0;
+        int giro = 0;
+            totale += prezzo[sel - 1] * quan;
+            Console.WriteLine($"Gusto: {prezzo[sel - 1]} --- Quantita: {quan}"); //--- DEBUG
+            giro++;
+        if(totale > 10.0d && !subtot)
+        {
+            totale *= 0.9;
+        }
+        return totale;
     }
+
+    
 
 
         //  NEL MAIN CAMBIARE LE SCELTE DI GUSTO E QUANTITA DA INT A STRING, PER FARLO FUNZIONARE CON LA FUNZIONE
@@ -35,15 +53,18 @@ class Gelateria
 
 
 
-    /* static void Main(string [] args)
+    static void Main(string [] args)
     {
         string[] gusti = new string[]{ "cioccolato", "vaniglia", "fragola", "pistacchio", "limone" };
         double[] prezzi = new double[]{ 1.50, 1.20, 1.30, 1.60, 1.10 };
-        string selezione = "1 2 3 4 5";
-        string quantita = "2 2 3 2 1";
         bool calcolosubtotale = true;
+        int selezione = 2;
+        int quantita = 2;
+        Console.WriteLine($"Stampa calcolo: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
+        selezione = 1;
+        quantita = 3;
         Console.WriteLine($"Il subtotale è: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
         calcolosubtotale = false;
         Console.WriteLine($"Il totale è: {CalcoloTotale(prezzi, quantita, selezione, calcolosubtotale)}");
-    } //*/ 
+    } 
 }
