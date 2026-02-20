@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gelateria", "Gelateria.csproj", "{7C236985-18E8-B5DB-D5C7-B64614E9B14A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C236985-18E8-B5DB-D5C7-B64614E9B14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C236985-18E8-B5DB-D5C7-B64614E9B14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C236985-18E8-B5DB-D5C7-B64614E9B14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C236985-18E8-B5DB-D5C7-B64614E9B14A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79E1B4D8-8A10-4D1D-A66A-DD795D8415F9}
+	EndGlobalSection
+EndGlobal
