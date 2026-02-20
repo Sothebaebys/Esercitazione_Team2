@@ -1,7 +1,5 @@
 ﻿using System;
 
-//using System.Security.Cryptography.X509Certificates;
-
 class GelateriaGelo
 {
     // Costante per la soglia sconto
@@ -9,22 +7,18 @@ class GelateriaGelo
     public static string[] gusti = ["cioccolato", "vaniglia", "fragola", "pistacchio", "limone"];
     public static double[] prezzi = [1.50, 1.20, 1.30, 1.60, 1.10];
     static double totale = 0;
-    //int lunghezza= gusti.Length;
-    //int[] indice = new int[gusti.Length];
 
     //Funzione per mandare in stampa il menù
-    //In realtà l'argomento si può rimuovere senza problemi e si itera direttamente 
-    //tra la lunghezza dell'array gusti/prezzi
     public static void StampaMenu(/*string[] gusti, double[] prezzi , int[] indice*/)
     {
         Console.WriteLine("\n---------------\nMenù dei gelati\n---------------\n");
         // Manda in stampa il menù completo iterando tra gusti e prezzi
         Console.WriteLine("Gusti:");
 
-        // Eventualmente si può sostituire indice con gusti/prezzi
-        for (int i = 0; i < gusti.Length /*indice.Length */; i++)
+
+        for (int i = 0; i < gusti.Length; i++)
         {
-            Console.WriteLine($"    -{i} {gusti[i]}\n                 Prezzo per pallina:  €{prezzi[i]}");
+            Console.WriteLine($"    -{i+1} {gusti[i]}\n                 Prezzo per pallina:  €{prezzi[i]}");
             Console.WriteLine("---------------------------------------------------------------");
         }
     }
@@ -34,11 +28,17 @@ class GelateriaGelo
         if(subtot)
         {
             totale += p * quan;
-            //Console.WriteLine($"Gusto: {p} --- Quantita: {quan}"); //--- DEBUG
+            Console.WriteLine($"Sub-totale :\n                    €{totale}");
         }
-        if(totale > 10.0d && !subtot)
+        else if(totale > SOGLIA_SCONTO && !subtot)
         {
             totale *= 0.9;
+            Console.WriteLine($"Totale con sconto applicato:\n                    €{totale}");
+        }
+        else
+        {
+            totale += p * quan;
+            Console.WriteLine($"Totale :\n                    €{totale}");
         }
         return totale;
     }
@@ -48,12 +48,13 @@ class GelateriaGelo
     {
         bool continua = true;
         int totQuantita = 0;
-    
+        int quantita;
 
         while (continua)
         {
             StampaMenu();
             int sceltaGusto;
+
             do
             {
                 //scegliere un gusto (tramite indice)
@@ -69,7 +70,6 @@ class GelateriaGelo
             
 
             //inserire la quantità di palline
-            int quantita;
             do
             {
                 Console.WriteLine("Quante palline vuoi? ");
@@ -81,6 +81,7 @@ class GelateriaGelo
                     Console.WriteLine("Selezione errata, riprova.");
                 }
             } while (quantita <= 0);
+            
             totQuantita += quantita;
 
 
@@ -92,13 +93,14 @@ class GelateriaGelo
             {  //CalcolaPrezzo;
 
                 //Al termine, stampa il riepilogo dell’ordine (gusti scelti, quantità, subtotali, sconto e totale finale
-                Console.WriteLine($"Hai ordinato {totQuantita} di palline in questi gusti ");
+                Console.WriteLine($"Hai ordinato {totQuantita} di palline di {gusti[sceltaGusto-1]} ");
+                totale = CalcoloTotale(prezzi[sceltaGusto],quantita,continua);
                 continua = false;
-                Console.WriteLine($"Subtotale: {totale}");
-                Console.WriteLine($"Totale con sconto applicato: {CalcoloTotale(prezzi[sceltaGusto], quantita, continua)}");
+                //Console.WriteLine($"Subtotale: {totale}");
+                //if (totale)
+                //Console.WriteLine($"Totale con sconto applicato: {CalcoloTotale(prezzi[sceltaGusto], quantita, continua)}");
             }
             CalcoloTotale(prezzi[sceltaGusto], quantita, continua);
         }
-    
     }
 }
