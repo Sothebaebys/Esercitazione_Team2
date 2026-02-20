@@ -88,7 +88,7 @@ class GelateriaGelo
             Console.WriteLine("Vuoi aggiungere un altro gusto? S/N: ");
             string altroGusto = Console.ReadLine();
 
-            if (altroGusto != "S" || altroGusto != "s")
+            if (altroGusto != "S" && altroGusto != "s")
             {  //CalcolaPrezzo;
 
                 //Al termine, stampa il riepilogo dell’ordine (gusti scelti, quantità, subtotali, sconto e totale finale
