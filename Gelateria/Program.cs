@@ -28,6 +28,22 @@ class GelateriaGelo
         }
     }
 
+    static double totale;
+
+    static double CalcoloTotale(double p, int quan, bool subtot)
+    {
+        if(subtot)
+        {
+            totale += p * quan;
+            //Console.WriteLine($"Gusto: {p} --- Quantita: {quan}"); //--- DEBUG
+        }
+        if(totale > 10.0d && !subtot)
+        {
+            totale *= 0.9;
+        }
+        return totale;
+    }
+
 
     static void Main(string[] args)
     {
@@ -68,31 +84,22 @@ class GelateriaGelo
             } while (quantita <= 0);
             totQuantita += quantita;
 
+
             //decidere se aggiungere un altro gusto o terminare l’ordine.
             Console.WriteLine("Vuoi aggiungere un altro gusto? S/N: ");
             string altroGusto = Console.ReadLine();
 
-            if (altroGusto != "S")
+            if (altroGusto != "S" || altroGusto != "s")
             {  //CalcolaPrezzo;
 
                 //Al termine, stampa il riepilogo dell’ordine (gusti scelti, quantità, subtotali, sconto e totale finale
                 Console.WriteLine($"Hai ordinato {totQuantita} di palline in questi gusti ");
                 continua = false;
+                Console.WriteLine($"Subtotale: {totale}");
+                Console.WriteLine($"Totale con sconto applicato: {CalcoloTotale(prezzi[sceltaGusto], quantita, continua)}");
             }
+            CalcoloTotale(prezzi[sceltaGusto], quantita, continua);
         }
     
-    }
-
-
-
-
-
-
-    /*Funzione di calcolo prezzo: Scrivi una funzione CalcolaTotale(int gusto, int quantita) 
-            che ritorni il prezzo totale per quel gusto e quella quantità.*/
-    public static void CalcolaPrezzo(int totGusti, int totQuantita)
-    {
-
-        //Se il totale supera una certa soglia (es. 10€), applica uno sconto del 10%.
     }
 }
